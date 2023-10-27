@@ -1,0 +1,23 @@
+version: '3'
+services:
+  tpot:
+    image: telekomsecurity/tpot
+    container_name: tpot
+    volumes:
+      - /opt/tpot/etc/
+      - /opt/tpot/rootfs/
+      - /opt/tpot/default.cfg
+    network_mode: "bridge"
+    ports:
+      - "21:21"
+      - "22:22"
+      - "80:80"
+      - "135:135"
+      - "139:139"
+      - "443:443"
+      - "1723:1723"
+      - "3128:3128"
+      - "3389:3389"
+      - "8080:8080"
+      - "8443:8443"
+    restart: always
